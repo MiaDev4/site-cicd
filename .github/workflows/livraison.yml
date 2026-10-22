@@ -16,6 +16,8 @@ jobs:
 
       - name: Vérifier que la page a un titre
         run: grep "<h1>" index.html
+      - name: Utiliser un secret
+        run: echo "Le secret vaut ${{ secrets.MESSAGE_SECRET }}"
   construire:
     needs: verifier
     runs-on: ubuntu-latest
